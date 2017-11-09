@@ -6,21 +6,35 @@ based on the official [LimitlessLED API documentation](http://www.limitlessled.c
 
 ## Usage
 
-    bridge = LimitlessLed::Bridge.new(host: '192.168.1.100', port: 8899)
-    
-    bridge.all_on        # all lights are on
-    bridge.all_off       # all lights are off
-    bridge.white         # all lights are white
-    bridge.disco         # disco mode!
-    bridge.disco_faster  # disco mode faster
-    bridge.disco_slower  # disco mode slower
+    # White type
+    light = LimitlessLed::White.new(host: '192.168.1.100', port: 8899)
+    light.group_1_on   # group1 light is on
+    light.group_2_warm # group2 light is warm white
+    light.group_1_cool # group1 light is cool white or daylight
+
+    light.group_1_brightness_up
+    light.group_1_brightness_down
+    light.group_1_brightness_max
+    light.group_1_brightness_min
+
+    light.all_on # all lights are on
+
+    # Color type
+    light = LimitlessLed::RGBW.new(host: '192.168.1.100', port: 8899)
+
+    light.all_on        # all lights are on
+    light.all_off       # all lights are off
+    light.white         # all lights are white
+    light.disco         # disco mode!
+    light.disco_faster  # disco mode faster
+    light.disco_slower  # disco mode slower
 
     # change the color by calling #color with either a color string, integer, or Color::RGB object
     # see: https://github.com/halostatue/color/blob/master/lib/color/rgb-colors.rb for a list
     # of all the named colors
-    bridge.color 'Red'                # color is red
-    bridge.color Color::RGB::Red      # color is red
-    bridge.color 170                  # color is red
+    light.color 'Red'                # color is red
+    light.color Color::RGB::Red      # color is red
+    light.color 170                  # color is red
 
     # adjust brightness on a scale from 2 - 27 (27 is full brightness)
     bridge.brightness 27              # full brightness
@@ -30,7 +44,7 @@ based on the official [LimitlessLED API documentation](http://www.limitlessled.c
     group.color 'Blue'
     group.brightness 25
 
-    
+
 ## Note
 
 We are *not affiliated in any way* with the manufacturers of Limitless LED. We just think they are cool.
