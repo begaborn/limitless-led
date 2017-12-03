@@ -1,7 +1,7 @@
 limitless-led
 =============
 
-A Ruby client library for controlling the [LimitlessLED v3.0 RGBW color-changing light bulbs] and [[LimitlessLED v3.0 White light bulbs](http://www.limitlessled.com/),
+A Ruby client library for controlling the [LimitlessLED v3.0 RGBW color-changing light bulbs] and [LimitlessLED v3.0 White light bulbs] (http://www.limitlessled.com/),
 based on the official [LimitlessLED API documentation](http://www.limitlessled.com/dev/).
 
 ## Usage
